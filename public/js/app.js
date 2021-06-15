@@ -10,6 +10,8 @@ messageOne.textContent = "Loading ....";
 forecastData.textContent = " ";
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
+    messageOne.textContent = "Loading ....";
+    forecastData.textContent = " ";
     fetch(`/weather?address=${searchText.value}`).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
